@@ -5,6 +5,7 @@
 #include <string>
 #include <fstream>
 #include <iostream>
+#include "struct.hpp"
 
 class Settings {
 
@@ -59,6 +60,24 @@ public:
         } else {
             return _settings[key];
         }
+    }
+
+    PIDParams get_pid_params(){
+        PIDParams pid_params;
+        pid_params.Kp = get_value("pid_kp");
+        pid_params.Ki = get_value("pid_ki");
+        pid_params.Kd = get_value("pid_kd");
+        return pid_params;
+    }
+
+    SimParams get_sim_params(){
+        SimParams sim_params;
+        sim_params.dt = get_value("dt");
+        sim_params.simulation_time = get_value("simulation_time");
+        sim_params.gravity = get_value("gravity");
+        sim_params.drag_coefficient = get_value("drag_coefficient");
+        sim_params.target_altitude = get_value("target_altitude");
+        return sim_params;
     }
 
 private:
