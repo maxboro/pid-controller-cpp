@@ -6,3 +6,6 @@ target_altitude=10
 pid_kp=2
 pid_ki=0.5
 pid_kd=1
+aircraft_mass=1
+aircraft_min_thrust=0
+aircraft_max_thrust=30

@@ -23,6 +23,9 @@ In file settings.txt you can modify simulation parameters.
 - pid_kp - PID parameter: Proportional gain
 - pid_ki - PID parameter: Integral gain
 - pid_kd - PID parameter: Derivative gain
+- aircraft_mass - Aircraft parameter: mass, kg
+- aircraft_min_thrust - Aircraft parameter: minimal thrust, Neutons
+- aircraft_max_thrust - Aircraft parameter: max thrust, Neutons
 
 # Example 
 ```terminal
