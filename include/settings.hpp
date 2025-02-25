@@ -80,6 +80,14 @@ public:
         return sim_params;
     }
 
+    AircraftParams get_aircraft_params(){
+        AircraftParams aircraft_params;
+        aircraft_params.mass = get_value("aircraft_mass");
+        aircraft_params.min_thrust = get_value("aircraft_min_thrust");
+        aircraft_params.max_thrust = get_value("aircraft_max_thrust");
+        return aircraft_params;
+    }
+
 private:
     std::unordered_map<std::string, double> _settings;
 
