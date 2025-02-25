@@ -15,11 +15,11 @@ make clean     # Cleans up build files
 ```
 # Settings
 In file settings.txt you can modify simulation parameters.
-- dt (default 0.01) - Time step of simulation
-- simulation_time (default 10) - Total time of simulation
+- dt (default 0.01) - Time step of simulation, s
+- simulation_time (default 10) - Total time of simulation, s
 - gravity (default 9.81) - g value for simulation in m/s^2
-- drag_coefficient (default 9.81) - drag coefficient for simulation
-- target_altitude (default 10) - desired altitude
+- drag_coefficient (default 0.1) - drag coefficient for simulation, Newtons
+- target_altitude (default 10) - desired altitude, m
 - pid_kp - PID parameter: Proportional gain
 - pid_ki - PID parameter: Integral gain
 - pid_kd - PID parameter: Derivative gain
