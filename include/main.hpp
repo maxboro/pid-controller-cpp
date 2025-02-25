@@ -35,12 +35,12 @@ int main(){
 
     auto pid = PIDController(pid_params);
     auto alt_model = AltitudeModel(sim_params);
-    double current_alt;
-    double thrust;
+    double current_alt = 0;
+    double thrust = 15;
 
     for (double t = 0; t <= sim_params.simulation_time; t += sim_params.dt) {
-        current_alt = alt_model.get_altitude();
         thrust = pid.compute(sim_params.target_altitude, current_alt);
+        current_alt = alt_model.get_altitude(thrust);  
 
         std::cout << "Trust: " << thrust << " Atl: " << current_alt << std::endl;
         std::this_thread::sleep_for(std::chrono::milliseconds(100));
