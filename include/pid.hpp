@@ -10,7 +10,7 @@ public:
     };
 
     // PID calculated desired thrust in this case
-    double compute(double target, double current, double dt) {
+    double compute(const double target, const double current, const double dt) {
         double _error_derivative;
         double error = target - current;
         _error_integral += error * dt;
