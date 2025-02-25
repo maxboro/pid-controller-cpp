@@ -15,8 +15,8 @@ make clean     # Cleans up build files
 ```
 # Settings
 In file settings.txt you can modify simulation parameters.
-- dt (default 0.01) - Time step of simulation, s
-- simulation_time (default 10) - Total time of simulation, s
+- dt (default 0.05) - Time step of simulation, s
+- simulation_time (default 100) - Total time of simulation, s
 - gravity (default 9.81) - g value for simulation in m/s^2
 - drag_coefficient (default 0.1) - drag coefficient for simulation, Newtons
 - target_altitude (default 10) - desired altitude, m

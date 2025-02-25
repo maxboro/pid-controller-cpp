@@ -1,5 +1,5 @@
-dt=0.01
-simulation_time=10
+dt=0.05
+simulation_time=100
 gravity=9.81
 drag_coefficient=0.1
 target_altitude=10
