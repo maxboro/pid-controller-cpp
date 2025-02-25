@@ -28,7 +28,7 @@ public:
         double drag_force = _sim_params.drag_coefficient * aircraft_state.velocity * std::abs(aircraft_state.velocity);
         double net_force = aircraft_state.thrust - gravity_force - drag_force;
 
-        // Update aircaft state
+        // Update aircraft state
         aircraft_state.acceleration = net_force / _aircraft_params.mass;
         aircraft_state.velocity += aircraft_state.acceleration * _sim_params.dt;
         aircraft_state.altitude += aircraft_state.velocity * _sim_params.dt;
