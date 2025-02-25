@@ -39,7 +39,7 @@ int main(){
     double thrust = 15;
 
     for (double t = 0; t <= sim_params.simulation_time; t += sim_params.dt) {
-        thrust = pid.compute(sim_params.target_altitude, current_alt);
+        thrust = pid.compute(sim_params.target_altitude, current_alt, sim_params.dt);
         current_alt = alt_model.get_altitude(thrust);  
 
         std::cout << "Trust: " << thrust << " Atl: " << current_alt << std::endl;
