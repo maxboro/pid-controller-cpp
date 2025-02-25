@@ -9,6 +9,7 @@ public:
         _is_first_run = true;
     };
 
+    // PID calculated desired thrust in this case
     double compute(double target, double current, double dt) {
         double _error_derivative;
         double error = target - current;
