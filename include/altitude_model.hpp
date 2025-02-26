@@ -1,7 +1,7 @@
 #ifndef ALT_MODEL_HPP
 #define ALT_MODEL_HPP
+#include <algorithm>
 #include "struct.hpp"
-#include "utils.hpp"
 
 class AltitudeModel {
 public:
@@ -12,7 +12,7 @@ public:
 
     double update_model(double pid_target_thrust, AircraftState &aircraft_state){
         // Check if PID calculated desired thrust is achievable by particular aircraft
-        aircraft_state.thrust = cap(pid_target_thrust, _aircraft_params.min_thrust, _aircraft_params.max_thrust);
+        aircraft_state.thrust = std::clamp(pid_target_thrust, _aircraft_params.min_thrust, _aircraft_params.max_thrust);
 
         // Physics → Calculate net force
         double gravity_force = _aircraft_params.mass * _sim_params.gravity;
