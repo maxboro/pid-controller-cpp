@@ -67,6 +67,8 @@ public:
         pid_params.Kp = get_value("pid_kp");
         pid_params.Ki = get_value("pid_ki");
         pid_params.Kd = get_value("pid_kd");
+        pid_params.integral_err_min = get_value("pid_integral_err_min");
+        pid_params.integral_err_max = get_value("pid_integral_err_max");
         return pid_params;
     }
 

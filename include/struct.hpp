@@ -5,6 +5,8 @@ struct PIDParams {
     double Kp;
     double Ki;
     double Kd;
+    double integral_err_min;
+    double integral_err_max;
 };
 
 struct SimParams {
