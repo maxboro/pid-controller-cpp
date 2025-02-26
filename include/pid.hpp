@@ -1,5 +1,6 @@
 #ifndef PID_HPP
 #define PID_HPP
+#include <algorithm>
 #include "struct.hpp"
 
 class PIDController {
@@ -14,6 +15,7 @@ public:
         double _error_derivative;
         double error = target - current;
         _error_integral += error * dt;
+        _error_integral = std::clamp(_error_integral, _pid_params.integral_err_min, _pid_params.integral_err_max);
 
         // derivative
         if (_is_first_run){
