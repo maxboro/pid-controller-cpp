@@ -29,7 +29,8 @@ In file settings.txt you can modify simulation parameters.
 - aircraft_min_thrust - Aircraft parameter: minimal thrust, Neutons
 - aircraft_max_thrust - Aircraft parameter: max thrust, Neutons
 
-# Example 
+# Example
+Terminal:
 ```terminal
 Running
 Reading the settings.
@@ -73,3 +74,5 @@ Trust (PID): 8.17203 Trust (real): 8.17203 Alt: 9.4744
 Caught signal 2 (SIGINT). Exiting safely...
 Execution is finished
 ```
+Plot:
+![Plot example](docs//images/plot_example.png)
