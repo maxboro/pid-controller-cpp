@@ -3,6 +3,13 @@ Simple example of PID controller in C++.
 PID used in simple aircraft 1D simulation (altitude only) to achieve desired altitude from point of start (0 altitude).
 
 # How to run
+
+Install GLFW (if not installed):
+
+```bash
+sudo apt install libglfw3-dev
+```
+
 #### Simulation:
 ```bash
 make           # Builds the project
@@ -76,3 +83,14 @@ Execution is finished
 ```
 Plot:
 ![Plot example](docs//images/plot_example.png)
+
+# Credits
+
+This project uses the following open-source libraries:
+
+- [Dear ImGui](https://github.com/ocornut/imgui) - MIT License
+- [ImPlot](https://github.com/epezent/implot) - MIT License
+- [GLFW](https://www.glfw.org/) - zlib/libpng License
+- [OpenGL](https://www.opengl.org/) - Open Standard
+
+I would like to thank the authors of these projects for their contributions to open-source software.
