@@ -16,19 +16,37 @@ CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address -fstack-protector-all -D_FO
 # Directories
 INC_DIR = include
 BIN_DIR = bin
+EXTERNAL_DIR = external
+
+# External Libraries (Dear ImGui, ImPlot)
+IMGUI_DIR = $(EXTERNAL_DIR)/imgui
+IMPLOT_DIR = $(EXTERNAL_DIR)/implot
+
+# Dependencies (OpenGL and GLFW)
+LIBS = -lglfw -lGL
 
 # Source files and output
-SRC = main.cpp
+SRC = main.cpp \
+      $(IMGUI_DIR)/imgui.cpp \
+      $(IMGUI_DIR)/imgui_draw.cpp \
+      $(IMGUI_DIR)/imgui_tables.cpp \
+      $(IMGUI_DIR)/imgui_widgets.cpp \
+      $(IMGUI_DIR)/backends/imgui_impl_glfw.cpp \
+      $(IMGUI_DIR)/backends/imgui_impl_opengl3.cpp \
+      $(IMPLOT_DIR)/implot.cpp \
+      $(IMPLOT_DIR)/implot_items.cpp
+
+# Output Executable
 TARGET = $(BIN_DIR)/exec
 
 # Rule to build the final program
 $(TARGET): $(SRC) $(INC_DIR)/*.hpp
 	mkdir -p $(BIN_DIR)
-	$(CC) $(CFLAGS) -o $(TARGET) $(SRC)
+	$(CC) $(CFLAGS) -I$(IMGUI_DIR) -I$(IMPLOT_DIR) $(SRC) -o $(TARGET) $(LIBS)
 
 # Clean up build files
 clean:
 	rm -rf $(BIN_DIR)
 
 # Phony targets
-.PHONY: clean test
+.PHONY: clean
