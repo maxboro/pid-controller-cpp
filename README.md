@@ -3,6 +3,17 @@ Simple example of PID controller in C++.
 PID used in simple aircraft 1D simulation (altitude only) to achieve desired altitude from point of start (0 altitude).
 
 # How to run
+
+Install GLFW (if not installed):
+```bash
+sudo apt install libglfw3-dev
+```
+
+Clone project:
+```bash
+git clone --recursive git@github.com:maxboro/pid-controller-cpp.git
+```
+
 #### Simulation:
 ```bash
 make           # Builds the project
@@ -29,7 +40,8 @@ In file settings.txt you can modify simulation parameters.
 - aircraft_min_thrust - Aircraft parameter: minimal thrust, Neutons
 - aircraft_max_thrust - Aircraft parameter: max thrust, Neutons
 
-# Example 
+# Example
+Terminal:
 ```terminal
 Running
 Reading the settings.
@@ -73,3 +85,16 @@ Trust (PID): 8.17203 Trust (real): 8.17203 Alt: 9.4744
 Caught signal 2 (SIGINT). Exiting safely...
 Execution is finished
 ```
+Plot:
+![Plot example](docs//images/plot_example.png)
+
+# Credits
+
+This project uses the following open-source libraries:
+
+- [Dear ImGui](https://github.com/ocornut/imgui) - MIT License
+- [ImPlot](https://github.com/epezent/implot) - MIT License
+- [GLFW](https://www.glfw.org/) - zlib/libpng License
+- [OpenGL](https://www.opengl.org/) - Open Standard
+
+I would like to thank the authors of these projects for their contributions to open-source software.
