@@ -5,9 +5,13 @@ PID used in simple aircraft 1D simulation (altitude only) to achieve desired alt
 # How to run
 
 Install GLFW (if not installed):
-
 ```bash
 sudo apt install libglfw3-dev
+```
+
+Clone project:
+```bash
+git clone --recursive git@github.com:maxboro/pid-controller-cpp.git
 ```
 
 #### Simulation:
